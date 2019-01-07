@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Page - Quản lý học viên</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>  
+    <!-- link normalize.css -->
+    <link rel="stylesheet" href="../../../assets/css/normalize.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <!-- font Roboto -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- link style-index.css -->
+    <link rel="stylesheet" href="../../../assets/css/admin-style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- header -->
+        <header class="row">
+            <div class="col-sm-12 col-md-3">
+                <a href="#home">CyberManager</a>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <input type="text" class="form-control" id="search" placeholder="Nhập tên người dùng cần search...">
+            </div>
+            <div class="col-sm-12 col-md-3 text-right">
+                <ul class="header-content">
+                    <li>
+                        <a href="">
+                            <i class="fa fa-globe"></i>
+                            <span>3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-comment-o"></i>
+                            <span>4</span>
+                        </a>
+                    </li>
+                    <li class="welcome">
+                        <a href="">
+                            <i class="fa fa-user-circle"></i> 
+                        </a>
+                        <span>Welcome, Admin</span>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-power-off"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <!-- end of header -->
+        <!-- content -->
+        <div class="row">
+            <!-- side navigation -->
+            <div class="col-sm-12 col-md-3" style="padding-left:0">
+                <ul class="danhsach-navi">
+                    <div class="manager">
+                        <div class="container text-center">
+                            <i class="fa fa-user img-manager"></i>
+                        </div>
+                    </div>
+                    <li>
+                        <a href="#">Dash Board</a>
+                    </li>
+                    <li>
+                        <a href="ThongTinChiTietGiaoVu.html">Xem thông tin chi tiết</a>
+                    </li>
+                    <li class="active">
+                        <a href="admin.html">Quản Lý Học Viên</a>
+                    </li>
+                    <li>
+                        <a href="admin-QuanLyKhoaHoc.html">Quản Lý Khóa Học</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- end of side navigation -->
+            <div class="col-sm-12 col-md-9">
+                <div class="content">
+                    <h1 class="text-center">Danh Sách Học Viên</h1>
+                    <div class="text-right">
+                        <!-- Button to Open the Modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ThemND">
+                            + Thêm Người Dùng
+                        </button>
+                    </div>
+                    <br>
+                    <div id="ketqua">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr class="text-center">
+                                    <th></th>
+                                    <th>Tài khoản</th>
+                                    <th>Họ Tên</th>
+                                    <th>Số ĐT</th>
+                                    <th> 
+                                        <div class="dropdown">
+                                            <button data-toggle="dropdown" style="background-color: transparent; border:none; cursor: pointer">
+                                            Loại Người Dùng</button>
+                                            <i class="fa fa-caret-down"></i>
+                                            <div class="dropdown-menu">
+                                                <button class="dropdown-item" id="btnLayThongTin" style="cursor: pointer">Người Dùng</button>
+                                                <button class="dropdown-item" id="btnLayThongTinHocVien" style="cursor: pointer">Học Viên</button>
+                                            </div>        
+                                        </div>
+                                        
+                                    </th>
+                                    <th>Chi tiết</th>
+                                    <th>Xóa</th>
+                                </tr>
+                            </thead>
+                            <tbody class="danhsach"></tbody>
+                        </table>               
+                    </div>
+                </div>
+                
+                <!-- The Modal Thêm Học Viên-->
+                <div class="modal fade" id="ThemND">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                            <h4 class="modal-title text-center">Nhập Thông Tin Người Dùng</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                    
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="taikhoan">Tài Khoản:</label>
+                                    <input type="text" class="form-control" id="taikhoan">
+                                </div>
+                                <div class="form-group">
+                                    <label for="matkhau">Mật Khẩu:</label>
+                                    <input type="password" class="form-control" id="matkhau">
+                                </div>
+                                <div class="form-group">
+                                    <label for="hoten">Họ Tên:</label>
+                                    <input type="text" class="form-control" id="hoten">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input type="email" class="form-control" id="email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="sodienthoai">Số Điện Thoại:</label>
+                                    <input type="number" class="form-control" id="sodienthoai">
+                                </div>
+                                <div class="form-group">
+                                    <label for="maloai">Mã Loại Người Dùng:</label>
+                                    <input type="text" class="form-control" id="maloai">
+                                </div>
+                                <div class="form-group">
+                                    <label for="tenloai">Tên Loại Người Dùng:</label>
+                                    <input type="text" class="form-control" id="tenloai">
+                                </div>
+                            </div>
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-warning" id="btnThemHocVien">Thêm Học Viên</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                
+                        </div>
+                    </div>
+                </div>
+                <!-- The Modal  Cập Nhật-->
+                <div class="modal fade" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                            <h4 class="modal-title">Thông Tin Chi Tiết</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                    
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="taikhoan">Tài Khoản:</label>
+                                    <input type="text" class="form-control" id="taikhoan1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="matkhau">Mật Khẩu:</label>
+                                    <input type="password" class="form-control" id="matkhau1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="hoten">Họ Tên:</label>
+                                    <input type="text" class="form-control" id="hoten1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input type="email" class="form-control" id="email1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="sodienthoai">Số Điện Thoại:</label>
+                                    <input type="number" class="form-control" id="sodienthoai1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="maloai">Mã Loại Người Dùng:</label>
+                                    <input type="text" class="form-control" id="maloai1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="tenloai">Tên Loại Người Dùng:</label>
+                                    <input type="text" class="form-control" id="tenloai1">
+                                </div>
+                            </div>
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-warning" id="btnCapNhatChinhThuc">Cập Nhật Thông Tin</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of content -->
+    </div>
+    <script src="../../../main.js"></script>
+</body>
+</html>

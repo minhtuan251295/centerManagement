@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>  
+    <!-- link normalize.css -->
+    <link rel="stylesheet" href="../../../assets/css/normalize.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <!-- font Roboto -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- link style-index.css -->
+    <link rel="stylesheet" href="../../../assets/css/admin-style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- header -->
+        <header class="row">
+            <div class="col-sm-12 col-md-3">
+                <a href="#home">CyberManager</a>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <input type="text" class="form-control" id="search" placeholder="Nhập tên người dùng cần search...">
+            </div>
+            <div class="col-sm-12 col-md-3 text-right">
+                <ul class="header-content">
+                    <li>
+                        <a href="">
+                            <i class="fa fa-globe"></i>
+                            <span>3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-comment-o"></i>
+                            <span>4</span>
+                        </a>
+                    </li>
+                    <li class="welcome">
+                        <a href="">
+                            <i class="fa fa-user-circle"></i>
+                        </a>
+                        <span>Welcome, Admin</span>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-power-off"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <!-- end header -->
+        <!-- content -->
+        <div class="row">
+            <!-- side navigation -->
+            <div class="col-sm-12 col-md-3" style="padding-left:0">
+                
+                <ul class="danhsach-navi">
+                    <div class="manager">
+                        <div class="container text-center">
+                            <i class="fa fa-user img-manager"></i>
+                        </div> 
+                    </div>
+                    <li class="active">
+                        <a href="#">Dash Board</a>
+                    </li>
+                    <li>
+                        <a href="ThongTinChiTietGiaoVu.html">Xem thông tin chi tiết</a>
+                    </li>
+                    <li>
+                        <a href="admin.html">Quản Lý Học Viên</a>
+                    </li>
+                    <li>
+                        <a href="admin-QuanLyKhoaHoc.html" >Quản Lý Khóa Học</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- end of side navigation -->
+            <div class="col-sm-12 col-md-9">
+                <div class="content">
+                    <h1 class="text-center">Dashboard</h1>
+                    <section class="container">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-4 ">
+                                <div class="content-box1">
+                                    356 User
+                                    <p>Đang Online</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-4">
+                                <div class="content-box1">
+                                    1568 Khóa Học
+                                    <p>Hiện Có</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-4">
+                                <div class="content-box1">
+                                    1245 Khách
+                                    <p>Đang Theo Dõi</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <section class="container my-3">
+                        <div id="container-chart"></div>
+                    </section>
+                    <section class="container my-3">
+                        <div id="container-chart-2"></div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <!-- end of content -->
+    </div>
+    <script src="./../../../assets/lib/highcharts.js"></script>
+    <script src="./../../../assets/js/Dashboard.js"></script>
+    <script src="../../../main.js"></script>
+</body>
+</html>

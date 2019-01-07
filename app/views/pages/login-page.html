@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Login Page</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" type="image/png" href="img/icons/favicon.ico"/>
+		<!-- ===================================================================== -->
+		<!-- link font awesome -->
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- ===================================================================== -->
+		<!-- link css -->
+		<link rel="stylesheet" type="text/css" href="./../../../assets/css/login-page.css">
+		<!-- ===================================================================== -->
+		
+	</head>
+	<body>
+		<!-- Form Login -->
+		<div id = "wrapper">
+			<div class = "container-login">
+				<div class = "wrap-form-login">
+					<form method = "post" class = "form-login">
+						<!-- Login title -->
+						<span class = "form-login-title">Login</span>
+						<!-- End Login Title -->
+						<!-- Input Login -->
+						<div class = "wrap-username">
+							<span class = "label-input">Username</span>
+							<i class="fa fa-user icon" aria-hidden="true" style ="position: absolute; display: block;	width: 100%; height: 100%; top: 45px; left: 5px; pointer-events: none;"></i>
+							<input class = "input-txt" type="text" name="username" placeholder="Type your usermame" id = "userName">
+							<span class= "spin"></span>
+						</div>
+						<div class = "wrap-password">
+							<span class = "label-input">Password</span>
+							<i class="fa fa-lock" aria-hidden="true" style ="position: absolute; display: block;	width: 100%; height: 100%; top: 45px; left: 5px; pointer-events: none;"></i>
+							<input class = "password-txt" type="password" name="password" placeholder="Type your password" id ="pass">
+							<span class= "spin"></span>
+						</div>
+						<div class = "text-right">
+							<a href="#">
+								Forgot Password?
+							</a>
+						</div>
+						<!-- End Input Login -->
+						<!-- Login Button -->
+						<div class = "conatiner-login-button">
+							<div class = "wrap-login-button">
+								<div class = "login-form-button" ></div>
+								<button class = "login-button" type = "button" id="btnLogin">Login</button>
+							</div>
+						</div>
+						<!-- End Login Button -->
+
+						<div class = "txt-style-1">
+							<span>Or Login Using</span>
+						</div>
+						<div class = "icon">
+							<a href="#" class = "login-social btn-fb">
+								<i class="fa fa-facebook"></i>
+							</a>
+
+							<a href="#" class = "login-social btn-tw">
+								<i class="fa fa-twitter"></i>
+							</a>
+
+							<a href="#" class = "login-social btn-gg">
+								<i class="fa fa-google"></i>
+							</a>
+						</div>
+
+						<div class = "txt-style-2">
+							<a href="resigter.html">SIGN UP</a>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- End Form Login -->
+		<!-- ===================================================================== -->
+		<!-- sweet alert -->
+		<script src="https://sweetalert.js.org/assets/sweetalert/sweetalert.min.js"></script>
+        <!-- ===================================================================== -->
+        <script src="../../../main.js"></script>
+	</body>
+</html>

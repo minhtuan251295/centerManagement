@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Page - Quản Lý Khóa Học</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>  
+    <!-- link normalize.css -->
+    <link rel="stylesheet" href="../../../assets/css/normalize.css">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <!-- font Roboto -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- link style-index.css -->
+    <link rel="stylesheet" href="../../../assets/css/admin-style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <header class="row">
+            <div class="col-sm-12 col-md-3">
+                <a href="#home">CyberManager</a>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <input type="text" class="form-control" id="search" placeholder="Nhập tên người dùng cần search...">
+            </div>
+            <div class="col-sm-12 col-md-3 text-right">
+                <ul class="header-content">
+                    <li>
+                        <a href="">
+                            <i class="fa fa-globe"></i>
+                            <span>3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-comment-o"></i>
+                            <span>4</span>
+                        </a>
+                    </li>
+                    <li class="welcome">
+                        <a href="">
+                            <i class="fa fa-user-circle"></i> 
+                        </a>
+                        <span>Welcome, Admin</span>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-power-off"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <div class="row">
+            <div class="col-sm-12 col-md-3" style="padding-left:0">
+                <ul class="danhsach-navi">
+                    <li class="active">
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="QL" data-toggle="collapse" data-target="#QL">Quản Lý Học Viên</a>
+                        <div id="QL" class="collapse">
+                            <ul >
+                                <li >
+                                    <a href="">Danh Sách Học Viên</a>
+                                </li>
+                                <li >
+                                    <a href="">Nhập Dữ Liệu Học Viên</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li >
+                        <a href="QLKH" data-toggle="collapse" data-target="#QLKH">Quản Lý Khóa Học</a>
+                        <div id="QLKH" class="collapse">
+                            <ul>
+                                <li >
+                                    <a href="">Danh Sách Khóa Học</a>
+                                </li>
+                                <li >
+                                    <a href="">Nhập Dữ Liệu Khóa Học</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li >
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-12 col-md-9">
+                <div class="content-QLKH">
+                    <h1 class="text-center">Danh Sách Khóa Học</h1>
+                    <div>
+                        <div class="form-group">
+                            <label for="makhoahoc">Mã Khóa Học:</label>
+                            <input type="text" class="form-control" id="makhoahoc">
+                        </div>
+                        <div class="form-group">
+                            <label for="tenkhoahoc">Tên Khóa Học:</label>
+                            <input type="text" class="form-control" id="tenkhoahoc">
+                        </div>
+                        <div class="form-group">
+                            <label for="mota">Mô Tả:</label>
+                            <input type="text" class="form-control" id="mota">
+                        </div>
+                        <div class="form-group">
+                            <label for="hinhanh">Hình Ảnh:</label>
+                            <input type="text" class="form-control" id="hinhanh">
+                        </div>
+                        <div class="form-group">
+                            <label for="luotxem">Lượt xem:</label>
+                            <input type="number" class="form-control" id="luotxem">
+                        </div>
+                        <div class="form-group">
+                            <label for="nguoitao">Người Tạo:</label>
+                            <input type="text" class="form-control" id="nguoitao">
+                        </div>
+                    </div>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Mã Khóa Học</th>
+                                <th>Tên Khóa Học</th>
+                                <th>Hình Ảnh</th>
+                                <th>Xóa</th>
+                            </tr>
+                        </thead>
+                        <tbody id="showkhoahoc">
+                    
+                        </tbody>
+                    </table>
+                    
+                    <div class="cac-btn">
+                        <button type="button" class="btn btn-success" id="btnLayThongTinKhoaHoc">Lấy Thông Tin Khóa Học</button>
+                        <button type="button" class="btn btn-secondary" id="btnChiTietKhoaHoc">Lấy Chi Tiết Khóa Học</button>
+                        <button type="button" class="btn btn-primary" id="btnThemKhoaHoc">Thêm Khóa Học</button>
+                        <button type="button" class="btn btn-warning" id="btnCapNhat">Cập nhật</button>
+                        <button type="button" class="btn btn-danger" id="btnXoaKhoahoc">Xóa Khóa Học</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../../main.js"></script>
+</body>
+</html>
